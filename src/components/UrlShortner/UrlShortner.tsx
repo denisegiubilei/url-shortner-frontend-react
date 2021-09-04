@@ -1,5 +1,4 @@
 import { FormEvent, useState } from 'react';
-import { URL_DATABASE } from '../../api/constants';
 import { createShortUrl } from '../../api/urls';
 
 import { UrlEntity } from '../../interfaces/Url';
@@ -18,7 +17,7 @@ const UrlShortner = () => {
     const longUrl = target.longUrl.value;
 
     createShortUrl(longUrl).then((res: UrlEntity) => {
-      setShortUrl(`${URL_DATABASE}/${res.url_short}`);
+      setShortUrl(`${window.location.href}${res.url_short}`);
     })
   }
 
