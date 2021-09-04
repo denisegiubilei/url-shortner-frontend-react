@@ -1,9 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { Header } from "./components/Header/Header";
-import { TopUrls } from "./components/TopUrls/TopUrls";
-import { UrlShortner } from "./components/UrlShortner/UrlShortner";
 import { UrlRedirector } from "./components/UrlRedirector/UrlRedirector";
+import { UrlShortnerPage } from "./pages/UrlShortnerPage";
 
 function App() {
   return (
@@ -13,11 +11,7 @@ function App() {
           <UrlRedirector />
         </Route>
         <Route path="/">
-          <div>
-            <Header />
-            <UrlShortner />
-            <TopUrls />
-          </div>
+          <UrlShortnerPage />
         </Route>
       </Switch>
     </Router>
