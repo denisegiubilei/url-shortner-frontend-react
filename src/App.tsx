@@ -1,6 +1,11 @@
+import { TopUrls } from "./components/TopUrls/TopUrls";
+
 function App() {
   return (
-    <h1>Url shortner</h1>
+    <div>
+      <h1>Url shortner</h1>
+      <TopUrls />
+    </div>
   );
 }
 
