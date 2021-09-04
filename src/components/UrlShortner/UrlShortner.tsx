@@ -1,4 +1,5 @@
 import { FormEvent, useState } from 'react';
+import { URL_DATABASE } from '../../api/constants';
 import { createShortUrl } from '../../api/urls';
 
 import { UrlEntity } from '../../interfaces/Url';
@@ -17,7 +18,7 @@ const UrlShortner = () => {
     const longUrl = target.longUrl.value;
 
     createShortUrl(longUrl).then((res: UrlEntity) => {
-      setShortUrl(res.url_short);
+      setShortUrl(`${URL_DATABASE}/${res.url_short}`);
     })
   }
 
@@ -25,7 +26,7 @@ const UrlShortner = () => {
     <form onSubmit={handleSubmit}>
       <input type="text" name="longUrl" value={longUrl} onChange={(e) => setLongUrl(e.target.value)} placeholder="www.your-url-here.com" />
       <button type="submit">Shorten It!</button>
-      <p>short url: {shortUrl}</p>
+      {shortUrl && <p>Short url: <a href={shortUrl} rel="noreferrer" target="_blank">{shortUrl}</a></p>}
     </form>
   );
 }

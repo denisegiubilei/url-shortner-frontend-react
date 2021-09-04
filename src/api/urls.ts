@@ -1,7 +1,8 @@
 import { URL_DATABASE } from "./constants";
 
 export const createShortUrl = (url: string) => {
-  return fetch(`${URL_DATABASE}/${url}`, {
+  const encodedUrl = encodeURIComponent(url);
+  return fetch(`${URL_DATABASE}/${encodedUrl}`, {
     method: "POST",
     headers: {
       "Access-Control-Allow-Origin": "*",
