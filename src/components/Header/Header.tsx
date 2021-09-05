@@ -1,8 +1,10 @@
+import styles from './Header.module.scss';
+
 const Header = () => (
-  <div>
+  <header className={styles.Header}>
     <h1>Keep it short!</h1>
     <p>make your urls easy to share</p>
-  </div>
+  </header>
 );
 
 export { Header }
