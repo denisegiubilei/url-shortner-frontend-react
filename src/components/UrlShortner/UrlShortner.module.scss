@@ -1,13 +1,14 @@
 @import "../../index.scss";
 
 .UrlShortner {
-  @extend %flex-row-centered;
-
   padding: 20px;
   margin: 40px;
   background: #c8d8e454;
 
   form {
+    @extend %flex-row-centered;
+    align-items: baseline;
+
     input {
       padding: 10px;
       border-radius: 2px;
