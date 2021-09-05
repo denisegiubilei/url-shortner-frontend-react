@@ -32,5 +32,12 @@
         text-decoration: underline;
       }
     }
+
+    .longUrl {
+      padding: 0 30px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
   }
 }

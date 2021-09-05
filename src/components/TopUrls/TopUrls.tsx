@@ -31,7 +31,7 @@ const TopUrls = () => {
               <span>
                 <a href={`${window.location.href}${url_short}`} rel="noreferrer" target="_blank">{window.location.href}{url_short}</a>
               </span>
-              <span>{url}</span>
+              <span className={styles.longUrl}>{url}</span>
               <span>{`${view_count} views`}</span>
             </li>
           ))
