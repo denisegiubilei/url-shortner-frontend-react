@@ -3,6 +3,8 @@ import { createShortUrl } from '../../api/urls';
 
 import { UrlEntity } from '../../interfaces/Url';
 
+import { ShortUrl } from './ShortUrl/ShortUrl';
+
 const UrlShortner = () => {
   const [longUrl, setLongUrl] = useState("");
   const [shortUrl, setShortUrl] = useState("");
@@ -25,7 +27,7 @@ const UrlShortner = () => {
     <form onSubmit={handleSubmit}>
       <input type="text" name="longUrl" value={longUrl} onChange={(e) => setLongUrl(e.target.value)} placeholder="www.your-url-here.com" />
       <button type="submit">Shorten It!</button>
-      {shortUrl && <p>Short url: <a href={shortUrl} rel="noreferrer" target="_blank">{shortUrl}</a></p>}
+      {shortUrl && <ShortUrl shortUrl={shortUrl} />}
     </form>
   );
 }
