@@ -9,11 +9,28 @@
     margin: 20px 0;
   }
 
+  ul {
+    border: 1px solid $themeLighterAlt;
+  }
+
   li {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 15px 0;
+    padding: 15px;
+
+    &:nth-child(odd) {
+      background-color: $themeLighterAlt;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
