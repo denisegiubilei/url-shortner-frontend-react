@@ -1,6 +1,11 @@
 @import "./styles/variables";
+@import "./styles/variables";
 @import "./styles/global";
 @import "./styles/placeholders";
+
+html {
+  font-size: 16px;
+}
 
 body {
   font-family: 'Lato', 'Arial', sans-serif;
