@@ -33,11 +33,16 @@
       }
     }
 
-    .longUrl {
-      padding: 0 30px;
-      overflow: hidden;
+    span {
       white-space: nowrap;
-      text-overflow: ellipsis;
+
+      &.longUrl {
+        padding: 0 30px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
+
+   
   }
 }
