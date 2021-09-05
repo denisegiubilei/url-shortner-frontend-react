@@ -4,15 +4,11 @@
   @extend %flex-collumn-centered;
 
   h1 {
-    color: $themePrimary;
-    font-size: toRem(50);
-    font-weight: bold;
+    @extend %primary-title;
     margin: 20px 0;
   }
 
   p {
-    color: $themeSecondary;
-    font-size: toRem(16);
-    font-weight: bold;
+    @extend %secondary-title;
   }
 }

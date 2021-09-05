@@ -10,3 +10,15 @@
 	align-items: center;
 	justify-content: center;
 }
+
+%primary-title {
+	color: $themePrimary;
+	font-size: toRem(50);
+	font-weight: bold;
+}
+
+%secondary-title {
+	color: $themeSecondary;
+	font-size: toRem(16);
+	font-weight: bold;
+}
