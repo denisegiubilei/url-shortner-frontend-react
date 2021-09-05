@@ -1,8 +1,11 @@
 @import "../../index.scss";
 
 .TopUrls {
-  width: 70%;
-  max-width: 900px;
+  width: calc(100% - 20px);
+  @include media-large() {
+    width: 70%;
+    max-width: 900px;
+  }
 
   h2 {
     @extend %secondary-title;
@@ -14,9 +17,12 @@
   }
 
   li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @extend %flex-collumn-centered;
+
+    @include media-large() {
+      flex-direction: row;
+      justify-content: space-between;
+    }
 
     padding: 15px;
 
@@ -37,12 +43,15 @@
       white-space: nowrap;
 
       &.longUrl {
-        padding: 0 30px;
         overflow: hidden;
         text-overflow: ellipsis;
+        max-width: 300px;
+
+        @include media-large() {
+          max-width: none;
+          padding: 0 30px;
+        }
       }
     }
-
-   
   }
 }
