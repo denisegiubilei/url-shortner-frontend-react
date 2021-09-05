@@ -1,6 +1,8 @@
 import { FormEvent, useState } from 'react';
 import { createShortUrl } from '../../api/urls';
 
+import styles from "./UrlShortner.module.scss";
+
 import { UrlEntity } from '../../interfaces/Url';
 
 import { ShortUrl } from './ShortUrl/ShortUrl';
@@ -24,11 +26,13 @@ const UrlShortner = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="longUrl" value={longUrl} onChange={(e) => setLongUrl(e.target.value)} placeholder="www.your-url-here.com" />
-      <button type="submit">Shorten It!</button>
-      {shortUrl && <ShortUrl shortUrl={shortUrl} />}
-    </form>
+    <section className={styles.UrlShortner} >
+      <form onSubmit={handleSubmit}>
+        <input type="text" name="longUrl" value={longUrl} onChange={(e) => setLongUrl(e.target.value)} placeholder="www.your-url-here.com" />
+        <button type="submit">Shorten It!</button>
+        {shortUrl && <ShortUrl shortUrl={shortUrl} />}
+      </form>
+    </section>
   );
 }
 

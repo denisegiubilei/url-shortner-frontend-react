@@ -1,0 +1,36 @@
+@import "../../index.scss";
+
+.UrlShortner {
+  @extend %flex-row-centered;
+
+  padding: 20px;
+  margin: 40px;
+  background: #c8d8e454;
+
+  form {
+    input {
+      padding: 10px;
+      border-radius: 2px;
+      border: 1px solid $themeTertiary;
+      width: 500px;
+    }
+
+    button {
+      color: $themeWhite;
+      background-color: $themeTertiary;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 2px;
+      border: none;
+      cursor: pointer;
+
+      width: 100px;
+      margin-top: 0;
+      margin-left: 10px;
+
+      &:hover {
+        transform: scale(1.01);
+      }
+    }
+  }
+}
