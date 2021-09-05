@@ -1,0 +1,19 @@
+@import "../../index.scss";
+
+.TopUrls {
+  width: 70%;
+  max-width: 900px;
+
+  h2 {
+    @extend %secondary-title;
+    margin: 20px 0;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 0;
+  }
+}
