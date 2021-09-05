@@ -13,6 +13,7 @@ const UrlShortner = () => {
   const [longUrl, setLongUrl] = useState("");
   const [shortUrl, setShortUrl] = useState("");
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const isValid = (longUrl: string) => {
     if (!longUrl || longUrl.length === 0) {
@@ -39,6 +40,8 @@ const UrlShortner = () => {
     const longUrl = target.longUrl.value?.trim();
 
     if (isValid(longUrl)) {
+      setIsLoading(true);
+
       createShortUrl(longUrl)
         .then((res: UrlEntity) => {
           setShortUrl(`${window.location.href}${res.url_short}`);
@@ -46,6 +49,7 @@ const UrlShortner = () => {
         .catch((error => {
           setError(error.message);
         }))
+        .finally(() => setIsLoading(false));
     }
   }
 
@@ -56,9 +60,15 @@ const UrlShortner = () => {
           <input type="text" name="longUrl" value={longUrl} onChange={(e) => setLongUrl(e.target.value)} placeholder="www.your-url-here.com" />
           {error && <ErrorMessage message={error} />}
         </div>
-        <button type="submit">Shorten It!</button>
-        {shortUrl && !error && <ShortUrl shortUrl={shortUrl} />}
+        <button type="submit">
+          {isLoading ? (
+            <span>Loading...</span>
+          ) : (
+            <span>Shorten It!</span>
+          )}
+        </button>
       </form>
+      {shortUrl && !error && <ShortUrl shortUrl={shortUrl} />}
     </section>
   );
 }
