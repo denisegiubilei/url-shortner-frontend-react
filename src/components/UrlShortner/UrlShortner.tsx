@@ -57,7 +57,7 @@ const UrlShortner = () => {
           {error && <ErrorMessage message={error} />}
         </div>
         <button type="submit">Shorten It!</button>
-        {shortUrl && <ShortUrl shortUrl={shortUrl} />}
+        {shortUrl && !error && <ShortUrl shortUrl={shortUrl} />}
       </form>
     </section>
   );
