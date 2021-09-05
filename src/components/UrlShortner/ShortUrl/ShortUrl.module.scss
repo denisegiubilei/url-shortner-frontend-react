@@ -6,4 +6,21 @@
   margin-top: 10px;
   background: $themeWhite;
   text-align: center;
+
+  button {
+    color: $themeTertiary;
+    background-color: $themeLighterAlt;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+
+    margin-top: 10px;
+
+    @include media-large() {
+      margin-top: 0;
+    }
+  }
 }
