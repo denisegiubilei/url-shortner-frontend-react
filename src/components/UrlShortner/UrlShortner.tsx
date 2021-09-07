@@ -1,6 +1,6 @@
 import { FormEvent, useState } from 'react';
 import { createShortUrl } from '../../api/urls';
-import { isValidUrl } from '../utils/url.utils';
+import { validateUrl } from './UrlShortner.utils';
 
 import styles from "./UrlShortner.module.scss";
 
@@ -9,6 +9,7 @@ import { UrlEntity } from '../../interfaces/Url';
 import { ShortUrl } from './ShortUrl/ShortUrl';
 import { ErrorMessage } from './ErrorMessage/ErrorMessage';
 
+
 const UrlShortner = () => {
   const [longUrl, setLongUrl] = useState("");
   const [shortUrl, setShortUrl] = useState("");
@@ -16,18 +17,11 @@ const UrlShortner = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const isValid = (longUrl: string) => {
-    if (!longUrl || longUrl.length === 0) {
-      setError("Url field cannot be empty!");
-      return false;
-    }
+    const errorMessage = validateUrl(longUrl);
 
-    if (!isValidUrl(longUrl)) {
-      setError("Invalid url!");
-      return false;
-    }
+    setError(errorMessage);
 
-    setError("");
-    return true;
+    return !!errorMessage;
   }
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
