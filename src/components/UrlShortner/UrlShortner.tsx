@@ -21,7 +21,7 @@ const UrlShortner = () => {
 
     setError(errorMessage);
 
-    return !!errorMessage;
+    return !errorMessage;
   }
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
