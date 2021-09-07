@@ -1,1 +1,1 @@
-export const URL_DATABASE = "http://localhost:3333";
+export const URL_DATABASE = "https://url-shortner-backend-node.herokuapp.com";
