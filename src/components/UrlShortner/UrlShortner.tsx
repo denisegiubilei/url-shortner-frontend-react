@@ -51,7 +51,13 @@ const UrlShortner = () => {
     <section className={styles.UrlShortner} >
       <form onSubmit={handleSubmit}>
         <div>
-          <input type="text" name="longUrl" value={longUrl} onChange={(e) => setLongUrl(e.target.value)} placeholder="www.your-url-here.com" />
+          <input 
+            required 
+            type="text" 
+            name="longUrl" 
+            value={longUrl} 
+            onChange={(e) => setLongUrl(e.target.value)} placeholder="www.your-url-here.com" 
+          />
           {error && <ErrorMessage message={error} />}
         </div>
         <button type="submit">
